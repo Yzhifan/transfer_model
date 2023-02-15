@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="wheel_leg">
+  <link
+    name="body_link">
+    <inertial>
+      <origin
+        xyz="3.37310181025487E-18 -0.000731227663035883 3.28342495818209E-17"
+        rpy="0 0 0" />
+      <mass
+        value="10.4369238910096" />
+      <inertia
+        ixx="0.117568847743583"
+        ixy="-1.15617863838456E-18"
+        ixz="1.38139162296356E-19"
+        iyy="0.116725987863209"
+        iyz="-6.67481475645864E-18"
+        izz="0.056839681354687" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/body_link.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/body_link.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="foreleg_link1">
+    <inertial>
+      <origin
+        xyz="-1.49274668455553E-15 0.0267581865337991 -2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0739398223686155" />
+      <inertia
+        ixx="0.000151872789753689"
+        ixy="7.4509291851736E-21"
+        ixz="-2.92452510201117E-22"
+        iyy="1.4436599239087E-05"
+        iyz="1.64747908240961E-19"
+        izz="0.000145963784497094" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/foreleg_link1.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/foreleg_link1.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="thigh1"
+    type="revolute">
+    <origin
+      xyz="0 -0.12364 -0.17864"
+      rpy="0.7854 0 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="foreleg_link1" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="30"
+      velocity="23" />
+  </joint>
+  <link
+    name="foreleg_link2">
+    <inertial>
+      <origin
+        xyz="0.00549720278457914 0.00754195823131308 -5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.089974512237157" />
+      <inertia
+        ixx="0.000330944687819586"
+        ixy="3.73031392679867E-06"
+        ixz="-2.32934060494933E-21"
+        iyy="1.09872708384457E-05"
+        iyz="2.00323292025642E-19"
+        izz="0.000323157047675612" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/foreleg_link2.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/foreleg_link2.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lower_leg1"
+    type="revolute">
+    <origin
+      xyz="0.006 -0.020417 -0.087844"
+      rpy="1.7901 0 0" />
+    <parent
+      link="foreleg_link1" />
+    <child
+      link="foreleg_link2" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wheel_link">
+    <inertial>
+      <origin
+        xyz="1.8428621001924E-18 1.95943768556878E-14 -2.2815083156047E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.21106966475732" />
+      <inertia
+        ixx="0.00726098209005097"
+        ixy="2.81690305599461E-18"
+        ixz="-1.41348936711185E-18"
+        iyy="0.0156045113542061"
+        iyz="-1.85795763651288E-15"
+        izz="0.0156045113542067" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/wheel_link.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/wheel_link.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="huai_joint"
+    type="continuous">
+    <origin
+      xyz="-0.006 -0.09 0"
+      rpy="-2.5755 0 0" />
+    <parent
+      link="foreleg_link2" />
+    <child
+      link="wheel_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="hindleg_link1">
+    <inertial>
+      <origin
+        xyz="-1.46596510186701E-15 0.0267581865337991 2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0739398223686155" />
+      <inertia
+        ixx="0.000151872789753689"
+        ixy="1.50779638554275E-20"
+        ixz="-2.92452510201073E-22"
+        iyy="1.4436599239087E-05"
+        iyz="0"
+        izz="0.000145963784497094" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/hindleg_link1.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/hindleg_link1.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="thigh2"
+    type="revolute">
+    <origin
+      xyz="0 0.12364 -0.17864"
+      rpy="2.3562 0 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="hindleg_link1" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="30"
+      velocity="23" />
+  </joint>
+  <link
+    name="hindleg_link2">
+    <inertial>
+      <origin
+        xyz="0.00549720278457914 0.00754195823131304 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0899745122371571" />
+      <inertia
+        ixx="0.000330944687819586"
+        ixy="3.73031392679872E-06"
+        ixz="-8.47032947254303E-22"
+        iyy="1.09872708384457E-05"
+        iyz="7.53859323056327E-20"
+        izz="0.000323157047675613" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/hindleg_link2.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/hindleg_link2.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lower_leg2"
+    type="revolute">
+    <origin
+      xyz="-0.006 -0.020417 0.087844"
+      rpy="-1.3515 0 3.1416" />
+    <parent
+      link="hindleg_link1" />
+    <child
+      link="hindleg_link2" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
